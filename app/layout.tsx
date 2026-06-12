@@ -18,7 +18,7 @@ const lora = Lora({
 });
 
 export const metadata: Metadata = {
-  title: "Dear Friend — Virtual Farewell Letter",
+  title: "bad Friend — Virtual Farewell Letter",
   description:
     "Compose a heartfelt virtual farewell letter with photos and share it via a unique link.",
 };

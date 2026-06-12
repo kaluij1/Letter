@@ -36,7 +36,7 @@ export default function LetterPaper({ letter, className = "" }: LetterPaperProps
   const bg = PAPER_COLORS[letter.bg];
   const greeting = letter.recipient.trim()
     ? `Dear ${letter.recipient.trim()},`
-    : "Dear Friend,";
+    : "cad Friend,";
 
   const paragraphs = letter.body.split(/\n\n+/).filter(Boolean);
 

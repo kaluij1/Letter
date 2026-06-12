@@ -32,7 +32,7 @@ export default function EnvelopeScene({
 }: EnvelopeSceneProps) {
   const greeting = letter.recipient.trim()
     ? `Dear ${letter.recipient.trim()},`
-    : "Dear Friend,";
+    : "bad Friend,";
 
   const peekBg = PAPER_COLORS[letter.bg];
   const isAnimating = phase !== "closed" && phase !== "open";
