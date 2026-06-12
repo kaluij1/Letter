@@ -1,26 +1,29 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Lora } from "next/font/google";
+import { Caveat, Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
-const cormorant = Cormorant_Garamond({
+const playfair = Playfair_Display({
   subsets: ["latin"],
-  weight: ["400", "600"],
-  style: ["normal", "italic"],
-  variable: "--font-cormorant",
+  variable: "--font-playfair",
   display: "swap",
 });
 
-const lora = Lora({
+const inter = Inter({
   subsets: ["latin"],
-  weight: ["400", "600"],
-  variable: "--font-lora",
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const caveat = Caveat({
+  subsets: ["latin"],
+  variable: "--font-caveat",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "bad Friend — Virtual Farewell Letter",
+  title: "One Last Letter — A Farewell Story",
   description:
-    "Compose a heartfelt virtual farewell letter with photos and share it via a unique link.",
+    "A personal letter celebrating years of friendship, memories, and gratitude.",
 };
 
 export default function RootLayout({
@@ -29,8 +32,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${lora.variable}`}>
-      <body className="font-body antialiased min-h-screen">{children}</body>
+    <html
+      lang="en"
+      className={`${playfair.variable} ${inter.variable} ${caveat.variable}`}
+    >
+      <body className="font-body antialiased">{children}</body>
     </html>
   );
 }

@@ -2,26 +2,24 @@ import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
       colors: {
-        parchment: {
-          light: "#fdf6ee",
-          DEFAULT: "#e8d9c4",
-          dark: "#c9b99a",
-        },
-        wax: "#8b2223",
+        cream: "#F8F3EC",
+        accent: "#6E5849",
+        deep: "#2E3A46",
+        ink: "#2B2B2B",
       },
       fontFamily: {
-        display: ["var(--font-cormorant)", "Georgia", "serif"],
-        body: ["var(--font-lora)", "Georgia", "serif"],
+        display: ["var(--font-playfair)", "Georgia", "serif"],
+        body: ["var(--font-inter)", "system-ui", "sans-serif"],
+        handwritten: ["var(--font-caveat)", "cursive"],
       },
-      screens: {
-        mobile: { max: "699px" },
+      backgroundImage: {
+        paper: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E\")",
       },
     },
   },

@@ -3,12 +3,10 @@
 @tailwind utilities;
 
 :root {
-  --parchment-light: #fdf6ee;
-  --parchment: #e8d9c4;
-  --parchment-dark: #c9b99a;
-  --wax: #8b2223;
-  --ink: #3d3429;
-  --ink-muted: #6b5d4d;
+  --cream: #f8f3ec;
+  --accent: #6e5849;
+  --deep: #2e3a46;
+  --ink: #2b2b2b;
 }
 
 html {
@@ -16,66 +14,28 @@ html {
 }
 
 body {
+  background-color: var(--cream);
   color: var(--ink);
-  background: var(--parchment-light);
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Envelope animation states */
-.envelope-flap {
-  transform-origin: center top;
-  transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+/* Horizontal timeline: hide scrollbar but keep scroll */
+.timeline-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #6e5849 transparent;
 }
 
-.envelope-flap--open {
-  transform: rotateX(180deg);
+.timeline-scroll::-webkit-scrollbar {
+  height: 6px;
 }
 
-.letter-peek {
-  bottom: 55px;
-  height: 0;
-  opacity: 0;
-  overflow: hidden;
-  transition:
-    bottom 0.65s cubic-bezier(0.22, 1, 0.36, 1),
-    height 0.65s cubic-bezier(0.22, 1, 0.36, 1),
-    opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+.timeline-scroll::-webkit-scrollbar-thumb {
+  background: #6e5849;
+  border-radius: 999px;
 }
 
-.letter-peek--rise {
-  bottom: 215px;
-  height: 220px;
-  opacity: 1;
-}
-
-.envelope-wrap {
-  transition:
-    opacity 0.4s ease,
-    transform 0.4s ease;
-}
-
-.envelope-wrap--fade {
-  opacity: 0;
-  transform: translateY(20px) scale(0.97);
-  pointer-events: none;
-}
-
-.letter-reveal {
-  opacity: 0;
-  transform: translateY(16px);
-  transition:
-    opacity 0.5s ease,
-    transform 0.5s ease;
-}
-
-.letter-reveal--show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.envelope-scene {
-  perspective: 800px;
-}
-
-.envelope-flap-3d {
-  transform-style: preserve-3d;
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
 }
