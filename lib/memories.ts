@@ -11,7 +11,7 @@ export const beginningChapter = {
 export const memories: Memory[] = [
   {
     id: "library",
-    image: "/memories/02-library.svg",
+    image: "/memories/sis.jpg",
     year: "Year 2",
     title: "Late nights at the library",
     shortStory:
