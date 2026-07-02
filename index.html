@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#F8F3EC">
+    <meta name="description" content="Five years of university. Thousands of moments.">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="To My Friend">
+    
+    <title>To My Friend</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Icons -->
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192.png">
+    <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <!-- Floating Background Elements -->
+    <div class="floating-elements">
+        <div class="floating-circle floating-circle-1"></div>
+        <div class="floating-circle floating-circle-2"></div>
+        <div class="floating-circle floating-circle-3"></div>
+    </div>
+    
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title fade-in">To My Friend</h1>
+            <p class="hero-subtitle fade-in-delay-1">
+                Five years of university.<br>
+                Thousands of moments.
+            </p>
+            <button class="cta-button fade-in-delay-2" onclick="scrollToMemories()">
+                Open Letter
+            </button>
+        </div>
+        <div class="scroll-indicator fade-in-delay-3">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+    
+    <!-- Memory Timeline -->
+    <section id="memories" class="memories-section">
+        
+        <!-- Memory 1 -->
+        <article class="memory-card memory-card-left scroll-fade">
+            <div class="memory-image-container">
+                <img src="assets/memories/01.jpg" alt="Where It Started" class="memory-image" loading="lazy">
+            </div>
+            <div class="memory-content">
+                <h2 class="memory-title">Where It Started</h2>
+                <p class="memory-story">
+                    We started as strangers in a crowded lecture hall, two faces among hundreds. 
+                    I never imagined that a simple "Is this seat taken?" would lead to five years 
+                    of shared laughter, late-night study sessions, and countless coffee runs. 
+                    Looking back, that first conversation was the beginning of something extraordinary.
+                </p>
+            </div>
+        </article>
+        
+        <!-- Memory 2 -->
+        <article class="memory-card memory-card-right scroll-fade">
+            <div class="memory-image-container">
+                <img src="assets/memories/02.jpg" alt="The Ordinary Days" class="memory-image" loading="lazy">
+            </div>
+            <div class="memory-content">
+                <h2 class="memory-title">The Ordinary Days</h2>
+                <p class="memory-story">
+                    It wasn't the big moments that defined our friendship—it was the ordinary ones. 
+                    The Tuesday afternoons at our favorite café. The walks across campus debating 
+                    everything from philosophy to pizza toppings. The comfortable silences between 
+                    lectures. These simple, unremarkable days became the foundation of something 
+                    beautiful and lasting.
+                </p>
+            </div>
+        </article>
+        
+        <!-- Memory 3 -->
+        <article class="memory-card memory-card-left scroll-fade">
+            <div class="memory-image-container">
+                <img src="assets/memories/03.jpg" alt="The Difficult Seasons" class="memory-image" loading="lazy">
+            </div>
+            <div class="memory-content">
+                <h2 class="memory-title">The Difficult Seasons</h2>
+                <p class="memory-story">
+                    We weathered storms together—exam stress, family troubles, heartbreaks, and doubts. 
+                    In those moments when everything felt overwhelming, you were there. Not with grand 
+                    gestures or perfect advice, but with presence. With understanding. With a reminder 
+                    that I wasn't alone. Those difficult seasons taught me that true friendship isn't 
+                    just about sharing joy—it's about sharing the weight of life's challenges.
+                </p>
+            </div>
+        </article>
+        
+        <!-- Memory 4 -->
+        <article class="memory-card memory-card-right scroll-fade">
+            <div class="memory-image-container">
+                <img src="assets/memories/04.jpg" alt="Graduation" class="memory-image" loading="lazy">
+            </div>
+            <div class="memory-content">
+                <h2 class="memory-title">Graduation</h2>
+                <p class="memory-story">
+                    As we threw our caps in the air, I realized this wasn't an ending—it was a 
+                    transformation. We're no longer the nervous freshmen who bonded over shared confusion. 
+                    We've grown, changed, and discovered who we are. And through it all, our friendship 
+                    has been the constant. Whatever comes next, wherever life takes us, these five years 
+                    have given me something irreplaceable: a friend for life.
+                </p>
+            </div>
+        </article>
+        
+    </section>
+    
+    <!-- Final Letter -->
+    <section id="final" class="final-section">
+        <div class="final-content scroll-fade">
+            <p class="final-quote">
+                We came here for degrees.<br>
+                Somehow I leave with stories.
+            </p>
+            <p class="final-signature">Thank you.</p>
+            <button class="replay-button" onclick="scrollToTop()">
+                Replay Memories
+            </button>
+        </div>
+    </section>
+    
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+    
+</body>
+</html>

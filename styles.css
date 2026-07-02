@@ -1,0 +1,538 @@
+/* =========================================
+   RESET & BASE STYLES
+   ========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background-color: #F8F3EC;
+    color: #2B2B2B;
+    line-height: 1.7;
+    overflow-x: hidden;
+    position: relative;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+button {
+    font-family: inherit;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+/* =========================================
+   FLOATING BACKGROUND ELEMENTS
+   ========================================= */
+
+.floating-elements {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.floating-circle {
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(110, 88, 73, 0.05), rgba(110, 88, 73, 0.02));
+    animation: float 20s infinite ease-in-out;
+}
+
+.floating-circle-1 {
+    width: 300px;
+    height: 300px;
+    top: 10%;
+    left: -100px;
+    animation-delay: 0s;
+}
+
+.floating-circle-2 {
+    width: 200px;
+    height: 200px;
+    top: 50%;
+    right: -50px;
+    animation-delay: 7s;
+}
+
+.floating-circle-3 {
+    width: 250px;
+    height: 250px;
+    bottom: 10%;
+    left: 20%;
+    animation-delay: 14s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) translateX(0);
+    }
+    33% {
+        transform: translateY(-30px) translateX(20px);
+    }
+    66% {
+        transform: translateY(30px) translateX(-20px);
+    }
+}
+
+/* =========================================
+   HERO SECTION
+   ========================================= */
+
+.hero-section {
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    background: linear-gradient(135deg, #F8F3EC 0%, #FDFAF5 100%);
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 90%;
+    z-index: 1;
+}
+
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    font-weight: 700;
+    color: #2B2B2B;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(1rem, 4vw, 1.25rem);
+    font-weight: 300;
+    color: #6E5849;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+}
+
+.cta-button {
+    background: linear-gradient(135deg, #6E5849 0%, #5A4739 100%);
+    color: #FFFFFF;
+    font-size: 1.125rem;
+    font-weight: 500;
+    padding: 18px 48px;
+    border-radius: 50px;
+    box-shadow: 0 8px 24px rgba(110, 88, 73, 0.25);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    min-width: 200px;
+    min-height: 56px;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(110, 88, 73, 0.35);
+}
+
+.cta-button:active {
+    transform: translateY(0);
+    box-shadow: 0 6px 16px rgba(110, 88, 73, 0.3);
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite;
+}
+
+.scroll-arrow {
+    width: 24px;
+    height: 24px;
+    border-left: 2px solid #6E5849;
+    border-bottom: 2px solid #6E5849;
+    transform: rotate(-45deg);
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+}
+
+/* =========================================
+   FADE-IN ANIMATIONS
+   ========================================= */
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1.2s ease-out forwards;
+}
+
+.fade-in-delay-1 {
+    opacity: 0;
+    animation: fadeIn 1.2s ease-out 0.3s forwards;
+}
+
+.fade-in-delay-2 {
+    opacity: 0;
+    animation: fadeIn 1.2s ease-out 0.6s forwards;
+}
+
+.fade-in-delay-3 {
+    opacity: 0;
+    animation: fadeIn 1.2s ease-out 0.9s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================
+   MEMORY TIMELINE SECTION
+   ========================================= */
+
+.memories-section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.memory-card {
+    background: #FFFFFF;
+    border-radius: 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    margin-bottom: 60px;
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.memory-card:hover {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.memory-image-container {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #F8F3EC 0%, #E8DFD5 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.memory-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.memory-card:hover .memory-image {
+    transform: scale(1.05);
+}
+
+.memory-content {
+    padding: 32px 24px;
+}
+
+.memory-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.75rem, 5vw, 2.25rem);
+    font-weight: 600;
+    color: #2B2B2B;
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+}
+
+.memory-story {
+    font-size: clamp(1rem, 3vw, 1.125rem);
+    line-height: 1.8;
+    color: #4A4A4A;
+    font-weight: 400;
+}
+
+/* Scroll Fade Animation */
+.scroll-fade {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-fade.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================================
+   FINAL LETTER SECTION
+   ========================================= */
+
+.final-section {
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #FDFAF5 0%, #F8F3EC 100%);
+}
+
+.final-content {
+    text-align: center;
+    max-width: 800px;
+}
+
+.final-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
+    font-weight: 600;
+    color: #2B2B2B;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+}
+
+.final-signature {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 400;
+    color: #6E5849;
+    margin-bottom: 3rem;
+    font-style: italic;
+}
+
+.replay-button {
+    background: transparent;
+    color: #6E5849;
+    font-size: 1.125rem;
+    font-weight: 500;
+    padding: 16px 40px;
+    border: 2px solid #6E5849;
+    border-radius: 50px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    min-height: 56px;
+}
+
+.replay-button:hover {
+    background: #6E5849;
+    color: #FFFFFF;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(110, 88, 73, 0.25);
+}
+
+.replay-button:active {
+    transform: translateY(0);
+}
+
+/* =========================================
+   TABLET STYLES (768px and up)
+   ========================================= */
+
+@media (min-width: 768px) {
+    
+    .hero-section {
+        padding: 40px;
+    }
+    
+    .memories-section {
+        padding: 120px 40px;
+    }
+    
+    .memory-card {
+        display: flex;
+        align-items: center;
+        margin-bottom: 80px;
+    }
+    
+    .memory-card-left {
+        flex-direction: row;
+    }
+    
+    .memory-card-right {
+        flex-direction: row-reverse;
+    }
+    
+    .memory-image-container {
+        width: 50%;
+        height: 400px;
+        flex-shrink: 0;
+    }
+    
+    .memory-content {
+        padding: 48px;
+        width: 50%;
+    }
+    
+    .final-section {
+        padding: 60px 40px;
+    }
+    
+}
+
+/* =========================================
+   DESKTOP STYLES (1024px and up)
+   ========================================= */
+
+@media (min-width: 1024px) {
+    
+    .hero-section {
+        padding: 60px;
+    }
+    
+    .memories-section {
+        padding: 140px 60px;
+    }
+    
+    .memory-card {
+        margin-bottom: 100px;
+    }
+    
+    .memory-image-container {
+        height: 450px;
+    }
+    
+    .memory-content {
+        padding: 60px;
+    }
+    
+    .final-section {
+        padding: 80px 60px;
+    }
+    
+    .floating-circle-1 {
+        width: 400px;
+        height: 400px;
+    }
+    
+    .floating-circle-2 {
+        width: 300px;
+        height: 300px;
+    }
+    
+    .floating-circle-3 {
+        width: 350px;
+        height: 350px;
+    }
+    
+}
+
+/* =========================================
+   LARGE DESKTOP STYLES (1440px and up)
+   ========================================= */
+
+@media (min-width: 1440px) {
+    
+    .memories-section {
+        padding: 160px 80px;
+    }
+    
+    .memory-image-container {
+        height: 500px;
+    }
+    
+}
+
+/* =========================================
+   ACCESSIBILITY & TOUCH IMPROVEMENTS
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* Touch device improvements */
+@media (hover: none) and (pointer: coarse) {
+    .cta-button,
+    .replay-button {
+        padding: 20px 48px;
+        font-size: 1.125rem;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .hero-title,
+    .memory-title,
+    .final-quote {
+        color: #000000;
+    }
+    
+    .memory-card {
+        border: 2px solid #2B2B2B;
+    }
+}
+
+/* Dark mode support (optional enhancement) */
+@media (prefers-color-scheme: dark) {
+    /* Keep light theme by default, but prepared for future */
+}
+
+/* =========================================
+   LOADING OPTIMIZATION
+   ========================================= */
+
+.memory-image {
+    background-color: #F8F3EC;
+}
+
+/* Ensure smooth rendering on iOS */
+button,
+.memory-card,
+.memory-image {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+/* Safe area insets for notched devices */
+@supports (padding: max(0px)) {
+    .hero-section,
+    .memories-section,
+    .final-section {
+        padding-left: max(20px, env(safe-area-inset-left));
+        padding-right: max(20px, env(safe-area-inset-right));
+    }
+}
